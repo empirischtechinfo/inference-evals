@@ -1,0 +1,16 @@
+# Core dependencies for OpenMedicalLLM evaluation
+datasets>=2.14.0
+torch>=2.0.0
+transformers>=4.40.0
+tqdm>=4.65.0
+numpy>=1.24.0
+huggingface-hub>=0.20.0
+
+# For local vLLM inference (recommended for speed)
+vllm>=0.5.0
+
+# For OpenAI-compatible API (vLLM server, OpenAI, etc.)
+openai>=1.0.0
+
+# Optional: For faster downloads
+huggingface-hub[hf-transfer]>=0.20.0

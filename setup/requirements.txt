@@ -1,0 +1,61 @@
+# =============================================================================
+# Fine-tuning Environment Requirements
+# =============================================================================
+# Core fine-tuning libraries
+# Install PyTorch separately with: pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu130
+transformers>=4.40.0
+tokenizers>=0.19.0
+accelerate>=0.30.0
+peft>=0.11.0
+trl>=0.9.0
+bitsandbytes>=0.43.0
+
+# Quantization
+gptqmodel>=0.9.0; sys_platform == 'linux'
+auto-gptq>=0.7.0; sys_platform == 'linux'
+
+# Training utilities
+datasets>=2.19.0
+scipy>=1.13.0
+scikit-learn>=1.5.0
+numpy>=1.26.0
+
+# Evaluation
+lm-eval>=0.4.7
+# For OpenMedicalLLM leaderboard
+evals>=3.0.0
+
+# Inference & Serving
+vllm>=0.5.0
+openai>=1.30.0
+
+# Utilities
+tqdm>=4.66.0
+python-dotenv>=1.0.0
+langdetect>=1.0.9
+wandb>=0.17.0
+# Weights & Biases for experiment tracking
+tensorboard>=2.16.0
+
+# Data processing
+pandas>=2.2.0
+pyarrow>=16.0.0
+
+# Hugging Face
+huggingface-hub>=0.23.0
+hf-transfer>=0.1.6
+
+# Optional: Flash Attention (for faster training)
+# flash-attn>=2.5.0; sys_platform == 'linux'
+
+# Optional: DeepSpeed (for distributed training)
+# deepspeed>=0.14.0; sys_platform == 'linux'
+
+# Optional: xFormers (memory-efficient attention)
+# xformers>=0.0.26
+
+# Development tools
+pytest>=8.2.0
+black>=24.4.0
+isort>=5.13.0
+flake8>=7.0.0

@@ -1,0 +1,65 @@
+name: finetuning
+channels:
+  - pytorch
+  - nvidia
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.12
+  - pip
+  # CUDA toolkit (optional - PyTorch wheels include CUDA)
+  # - cudatoolkit=11.8
+  - git
+  - git-lfs
+  - wget
+  - curl
+  - build-essential
+  - cmake
+  - ninja
+  - pip:
+    # PyTorch with CUDA 13.0
+    - torch>=2.3.0
+    - torchvision
+    - torchaudio
+    --index-url https://download.pytorch.org/whl/cu130
+
+    # Core fine-tuning libraries
+    - transformers>=4.40.0
+    - tokenizers>=0.19.0
+    - accelerate>=0.30.0
+    - peft>=0.11.0
+    - trl>=0.9.0
+    - bitsandbytes>=0.43.0
+
+    # Quantization (Linux only builds)
+    - gptqmodel>=0.9.0
+    - auto-gptq>=0.7.0
+
+    # Data & Evaluation
+    - datasets>=2.19.0
+    - lm-eval>=0.4.7
+
+    # Inference
+    - vllm>=0.5.0
+    - openai>=1.30.0
+
+    # Utilities
+    - tqdm>=4.66.0
+    - python-dotenv>=1.0.0
+    - langdetect>=1.0.9
+    - wandb>=0.17.0
+    - tensorboard>=2.16.0
+    - pandas>=2.2.0
+    - pyarrow>=16.0.0
+    - huggingface-hub>=0.23.0
+    - hf-transfer>=0.1.6
+
+    # Scientific computing
+    - scipy>=1.13.0
+    - scikit-learn>=1.5.0
+    - numpy>=1.26.0
+
+    # Development
+    - pytest>=8.2.0
+    - black>=24.4.0
+    - isort>=5.13.0
